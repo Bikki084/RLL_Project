@@ -1,0 +1,11 @@
+package com.cms.model;
+
+public class Admin {
+
+	private String aId;
+	private String ausername;
+	private String apassword;
+	
+	
+	
+}

@@ -1,0 +1,28 @@
+package com.cms.model;
+
+import javax.persistence.Entity;
+import javax.persistence.Table;
+
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+@Entity
+@Table(name = "adminLogin")
+@AllArgsConstructor
+@Data
+@NoArgsConstructor
+public class Admin {
+
+	private String auserId;
+	private String aPassword;
+	public String getAuserId() {
+		return auserId;
+	}
+	public void setAuserId(String auserId) {
+		this.auserId = auserId;
+	}
+	
+	
+	
+}

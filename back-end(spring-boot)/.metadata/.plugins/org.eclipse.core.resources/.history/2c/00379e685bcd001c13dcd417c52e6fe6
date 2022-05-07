@@ -1,0 +1,9 @@
+package com.cms.model;
+
+import javax.persistence.Entity;
+
+@Entity
+@Table (name = "librarryLogin")
+public class Library {
+
+}

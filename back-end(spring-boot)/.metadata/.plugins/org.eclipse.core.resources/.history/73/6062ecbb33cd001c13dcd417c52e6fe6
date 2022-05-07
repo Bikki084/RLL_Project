@@ -1,0 +1,13 @@
+package com.cms.repo;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+
+import com.cms.model.Faculty;
+
+public interface FacultyRepo extends JpaRepository<Faculty, String> {
+
+	com.cms.service.Faculty findByFusername(String username);
+	
+	
+
+}

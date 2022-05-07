@@ -1,0 +1,5 @@
+package com.cms.repo;
+
+public interface AdminRepo extends JpaRepository<admin, String>{
+
+}

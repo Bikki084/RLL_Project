@@ -1,0 +1,16 @@
+package com.cms.model;
+
+import javax.persistence.Entity;
+import javax.persistence.Table;
+
+@Entity
+@Table(name = "adminLogin")
+public class Admin {
+
+	private String aId;
+	private String ausername;
+	private String apassword;
+	
+	
+	
+}
