@@ -1,3 +1,4 @@
+<app-navbar></app-navbar>
 <div class="container-fluid">
     <div class="row">
         <div class="col-sm-6 text-black">
@@ -8,7 +9,7 @@
 
                 <form (ngSubmit)="libraryLogin()" style="width: 23rem;">
 
-                    <h3 class="fw-normal mb-3 pb-3" style="letter-spacing: 1px;">Librarian Login</h3>
+                    <h3 class="fw-bolder fs-3 mb-3 pb-3" style="letter-spacing: 1px;">Librarian Login</h3>
 
                     <div class="form-outline mb-4">
                         <input type="username" placeholder="Username" id="lusername" [(ngModel)]="library.lusername" name="lusername"
@@ -36,3 +37,4 @@
         </div>
     </div>
 </div>
+<app-footer></app-footer>

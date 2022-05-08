@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { Student } from 'src/app/classes/student';
 import { LoginstudentService } from 'src/app/services/loginstudent.service';
 
@@ -10,7 +11,7 @@ import { LoginstudentService } from 'src/app/services/loginstudent.service';
 export class StudentComponent implements OnInit {
 
   student: Student = new Student();
-  constructor(private studentloginservice:LoginstudentService) { }
+  constructor(private studentloginservice:LoginstudentService, private router: Router) { }
 
   ngOnInit(): void {
   }
@@ -18,7 +19,8 @@ export class StudentComponent implements OnInit {
   studentLogin(){
     console.log(this.student);
     this.studentloginservice.studentLogin(this.student).subscribe(data=>{
-      alert("Student LoggedIn Successfully"); 
+      alert("Student LoggedIn Successfully"), 
+        this.router.navigate(['/student-dashboard'])
     }, error=>alert("sorry please enter correct username and password!"))
   }
 

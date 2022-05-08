@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { Faculty } from 'src/app/classes/faculty';
 import { LoginfacultyService } from 'src/app/services/loginfaculty.service';
 
@@ -11,7 +12,7 @@ export class FacultyComponent implements OnInit {
 
 
   faculty:Faculty = new Faculty();
-  constructor(private loginfacultyservice: LoginfacultyService) { }
+  constructor(private loginfacultyservice: LoginfacultyService, private router: Router) { }
 
   ngOnInit(): void {
   }
@@ -19,7 +20,7 @@ export class FacultyComponent implements OnInit {
   facultyLogin(){
     console.log(this.faculty);
     this.loginfacultyservice.facultyLogin(this.faculty).subscribe(data=>{
-      alert("Faculty loggedIn successully");
+      alert("Faculty loggedIn successully"), this.router.navigate(['/faculty-dashboard'])
     }, error=>alert("sorry please enter correct username and password!"));
   }
 

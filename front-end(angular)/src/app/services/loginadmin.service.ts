@@ -7,6 +7,9 @@ import { Admin } from '../classes/admin';
   providedIn: 'root'
 })
 export class LoginadminService {
+  sendAdmin(ausername: string) {
+    throw new Error('Method not implemented.');
+  }
   private baseUrl = "http://localhost:8081/admin/login";
   constructor(private httpClient: HttpClient) { }
 

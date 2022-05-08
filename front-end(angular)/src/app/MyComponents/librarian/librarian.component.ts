@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { Library } from 'src/app/classes/library';
 import { LoginlibraryService } from 'src/app/services/loginlibrary.service';
 
@@ -11,7 +12,7 @@ export class LibrarianComponent implements OnInit {
 
   
   library: Library = new Library();
-  constructor(private loginlibraryservice: LoginlibraryService) { }
+  constructor(private loginlibraryservice: LoginlibraryService, private router: Router) { }
 
   ngOnInit(): void {
   }
@@ -19,7 +20,7 @@ export class LibrarianComponent implements OnInit {
   libraryLogin(){
     console.log(this.library);
     this.loginlibraryservice.libraryLogin(this.library).subscribe(data=>{
-      alert("Librarian LoggedIn Successfully"); 
+      alert("Librarian LoggedIn Successfully"),  this.router.navigate(['/librarian-dashboard']); 
     }, error=>alert("sorry please enter correct username and password!"))
   }
 
