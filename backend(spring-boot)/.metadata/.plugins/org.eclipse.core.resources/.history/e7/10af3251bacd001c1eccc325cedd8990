@@ -1,0 +1,20 @@
+package com.cms.model;
+
+import javax.persistence.Entity;
+import javax.persistence.Table;
+
+@Entity
+@Table(name="studentLogin")
+
+public class Student {
+	
+	private int id;
+	private String roll_no;
+	private String name;
+	private String susername;
+	private String spassword;
+	private String contact_no;;
+	private String stream;
+	private String parent_details;
+
+}
