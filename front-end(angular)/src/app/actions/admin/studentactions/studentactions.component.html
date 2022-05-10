@@ -1,0 +1,33 @@
+<app-studentheader></app-studentheader>
+<div class="container my-5">
+    <h2>Student List</h2>
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Username</th>
+                <th>Password</th>
+                <th>Name</th>
+                <th>Contact</th>
+                <th>Stream</th>
+                <th>Batch</th>
+                <th>Parent</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let adminstudent of adminstudents">
+                <td>{{adminstudent.susername}}</td>
+                <td>{{adminstudent.spassword}}</td>
+                <td>{{adminstudent.name}}</td>
+                <td>{{adminstudent.contact_no}}</td>
+                <td>{{adminstudent.stream}}</td>
+                <td>{{adminstudent.batch}}</td>
+                <td>{{adminstudent.parent_details}}</td>
+                <td>
+                    <button (click)="updateAdminstudent(adminstudent)" class="btn btn-primary">Update</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+
+</div>

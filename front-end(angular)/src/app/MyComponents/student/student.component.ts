@@ -20,7 +20,7 @@ export class StudentComponent implements OnInit {
     console.log(this.student);
     this.studentloginservice.studentLogin(this.student).subscribe(data=>{
       alert("Student LoggedIn Successfully"), 
-        this.router.navigate(['/student-dashboard'])
+        this.router.navigate(['/student-dashboard']);
     }, error=>alert("sorry please enter correct username and password!"))
   }
 

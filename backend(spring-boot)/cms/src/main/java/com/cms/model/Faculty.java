@@ -35,4 +35,17 @@ public class Faculty {
 		this.fpassword = fpassword;
 	}
 
+	public Faculty(String fusername, String fpassword) {
+		super();
+		this.fusername = fusername;
+		this.fpassword = fpassword;
+	}
+
+	public Faculty() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+	
+	
+
 }

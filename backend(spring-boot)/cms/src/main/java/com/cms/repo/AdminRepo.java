@@ -9,4 +9,5 @@ import com.cms.model.Admin;
 public interface AdminRepo extends JpaRepository<Admin, String> {
 
 		Admin findByAusername(String ausername);
+		
 }

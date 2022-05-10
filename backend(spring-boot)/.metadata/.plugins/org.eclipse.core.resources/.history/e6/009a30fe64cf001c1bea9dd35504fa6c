@@ -1,0 +1,8 @@
+package com.cms.model;
+
+public class Events {
+	
+	private String event_name;
+	private String event_date;
+
+}

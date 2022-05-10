@@ -10,6 +10,28 @@ import { AdminDashboardComponent} from './MyComponents/admin-dashboard/admin-das
 import { StudentDashboardComponent } from './MyComponents/student-dashboard/student-dashboard.component';
 import { FacultyDashboardComponent } from './MyComponents/faculty-dashboard/faculty-dashboard.component';
 import { LibrarianDashboardComponent } from './MyComponents/librarian-dashboard/librarian-dashboard.component';
+import { MyprofileComponent } from './actions/student/myprofile/myprofile.component';
+import { ViewresultComponent } from './actions/student/viewresult/viewresult.component';
+import { ViewassignmentComponent } from './actions/student/viewassignment/viewassignment.component';
+import { ViewattendanceComponent } from './actions/student/viewattendance/viewattendance.component';
+import { ViewtimetableComponent } from './actions/student/viewtimetable/viewtimetable.component';
+import { Student } from './classes/student';
+import { StudentactionsComponent } from './actions/admin/studentactions/studentactions.component';
+import { AddbookComponent } from './actions/library/addbook/addbook.component';
+import { RequestbookComponent } from './actions/library/requestbook/requestbook.component';
+import { IssuebookComponent } from './actions/library/issuebook/issuebook.component';
+import { ReturnbookComponent } from './actions/library/returnbook/returnbook.component';
+import { FassignmentComponent } from './actions/faculty/fassignment/fassignment.component';
+import { FattendanceComponent } from './actions/faculty/fattendance/fattendance.component';
+import { FresultsComponent } from './actions/faculty/fresults/fresults.component';
+import { FtimetableComponent } from './actions/faculty/ftimetable/ftimetable.component';
+import { VieweventComponent } from './actions/student/viewevent/viewevent.component';
+import { FvieweventComponent } from './actions/faculty/fviewevent/fviewevent.component';
+import { LvieweventComponent } from './actions/library/lviewevent/lviewevent.component';
+import { ViewbooksComponent } from './actions/student/viewbooks/viewbooks.component';
+import { StudentheaderComponent } from './actions/admin/studentheader/studentheader.component';
+import { AddstudentComponent } from './actions/admin/addstudent/addstudent.component';
+import { UpdatestudentComponent } from './actions/admin/updatestudent/updatestudent.component';
 
 
 const routes: Routes = [
@@ -22,7 +44,28 @@ const routes: Routes = [
   { path: 'admin-dashboard', component: AdminDashboardComponent},
   { path: 'student-dashboard', component: StudentDashboardComponent},
   { path: 'faculty-dashboard', component: FacultyDashboardComponent},
-  { path: 'librarian-dashboard', component: LibrarianDashboardComponent}
+  { path: 'librarian-dashboard', component: LibrarianDashboardComponent},
+  { path: 'student/myprofile', component: MyprofileComponent },
+  { path: 'student/viewbooks', component: ViewbooksComponent},
+  { path: 'student/viewresult', component:ViewresultComponent},
+  { path: 'student/viewassignment', component:ViewassignmentComponent},
+  { path: 'student/viewattendance', component:ViewattendanceComponent},
+  { path: 'student/viewtimetable', component:ViewtimetableComponent},
+  { path: 'student/viewevents', component: VieweventComponent},
+  { path: 'admin/student-actions', component: StudentheaderComponent},
+  { path: 'admin/student-actions/student-list', component: StudentactionsComponent},
+  { path: 'admin/student-actions/student-add', component: AddstudentComponent},
+  { path: 'admin/student-actions/student-update', component: UpdatestudentComponent},
+  { path: 'library/addbook', component: AddbookComponent},
+  { path: 'library/requestbook', component: RequestbookComponent},
+  { path: 'library/issuebook', component: IssuebookComponent},
+  { path: 'library/returnbook', component: ReturnbookComponent},
+  { path: 'library/viewevent', component: LvieweventComponent},
+  { path: 'faculty/fassignments', component: FassignmentComponent},
+  { path: 'faculty/fattendance', component: FattendanceComponent},
+  { path: 'faculty/fresults', component: FresultsComponent},
+  { path: 'faculty/ftimetable', component: FtimetableComponent},
+  { path: 'faculty/fviewevent', component: FvieweventComponent}
 
 ];
 

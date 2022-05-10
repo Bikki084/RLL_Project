@@ -7,18 +7,18 @@
 
             <div class="d-flex align-items-center h-custom-2 px-5 ms-xl-4 mt-5 pt-5 pt-xl-0 mt-xl-n5">
 
-                <form (ngSubmit)="adminLogin()"     style="width: 23rem;">
+                <form (ngSubmit)="adminLogin()" style="width: 23rem;">
 
                     <h3 class="fw-bolder fs-3 mb-3 pb-3" style="letter-spacing: 1px;">Admin Login</h3>
 
                     <div class="form-outline mb-4">
                         <input type="username" placeholder="Username" id="ausername" name="ausername"
-                        [(ngModel)] = "admin.ausername" class="form-control form-control-lg" />
+                            [(ngModel)]="admin.ausername" class="form-control form-control-lg" />
                     </div>
 
                     <div class="form-outline mb-4">
                         <input type="password" placeholder="Password" id="apassword" name="apassword"
-                            [(ngModel)] = "admin.apassword"   class="form-control form-control-lg" />
+                            [(ngModel)]="admin.apassword" class="form-control form-control-lg" />
                     </div>
 
                     <div class="pt-1 mb-4">

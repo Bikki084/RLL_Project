@@ -1,0 +1,11 @@
+package com.cms.model;
+
+import javax.persistence.Entity;
+
+@Entity
+public class Events {
+	
+	private String event_name;
+	private String event_date;
+
+}
