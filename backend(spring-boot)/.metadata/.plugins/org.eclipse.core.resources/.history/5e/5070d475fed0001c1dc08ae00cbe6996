@@ -1,0 +1,15 @@
+package com.cms.repo;
+
+import java.util.List;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+
+import com.cms.model.Student;
+
+public interface StudentRepo extends JpaRepository<Student, Long> {
+
+	Student findBySusername(String susername);
+
+	List<Student> findAll();
+
+}

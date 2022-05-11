@@ -16,7 +16,6 @@ import { ViewassignmentComponent } from './actions/student/viewassignment/viewas
 import { ViewattendanceComponent } from './actions/student/viewattendance/viewattendance.component';
 import { ViewtimetableComponent } from './actions/student/viewtimetable/viewtimetable.component';
 import { Student } from './classes/student';
-import { StudentactionsComponent } from './actions/admin/studentactions/studentactions.component';
 import { AddbookComponent } from './actions/library/addbook/addbook.component';
 import { RequestbookComponent } from './actions/library/requestbook/requestbook.component';
 import { IssuebookComponent } from './actions/library/issuebook/issuebook.component';
@@ -29,9 +28,7 @@ import { VieweventComponent } from './actions/student/viewevent/viewevent.compon
 import { FvieweventComponent } from './actions/faculty/fviewevent/fviewevent.component';
 import { LvieweventComponent } from './actions/library/lviewevent/lviewevent.component';
 import { ViewbooksComponent } from './actions/student/viewbooks/viewbooks.component';
-import { StudentheaderComponent } from './actions/admin/studentheader/studentheader.component';
-import { AddstudentComponent } from './actions/admin/addstudent/addstudent.component';
-import { UpdatestudentComponent } from './actions/admin/updatestudent/updatestudent.component';
+import { StudentactionsComponent } from './actions/admin/studentactions/studentactions.component';
 
 
 const routes: Routes = [
@@ -52,10 +49,6 @@ const routes: Routes = [
   { path: 'student/viewattendance', component:ViewattendanceComponent},
   { path: 'student/viewtimetable', component:ViewtimetableComponent},
   { path: 'student/viewevents', component: VieweventComponent},
-  { path: 'admin/student-actions', component: StudentheaderComponent},
-  { path: 'admin/student-actions/student-list', component: StudentactionsComponent},
-  { path: 'admin/student-actions/student-add', component: AddstudentComponent},
-  { path: 'admin/student-actions/student-update', component: UpdatestudentComponent},
   { path: 'library/addbook', component: AddbookComponent},
   { path: 'library/requestbook', component: RequestbookComponent},
   { path: 'library/issuebook', component: IssuebookComponent},
@@ -65,7 +58,8 @@ const routes: Routes = [
   { path: 'faculty/fattendance', component: FattendanceComponent},
   { path: 'faculty/fresults', component: FresultsComponent},
   { path: 'faculty/ftimetable', component: FtimetableComponent},
-  { path: 'faculty/fviewevent', component: FvieweventComponent}
+  { path: 'faculty/fviewevent', component: FvieweventComponent},
+  { path: 'admin/studentactions', component: StudentactionsComponent}
 
 ];
 

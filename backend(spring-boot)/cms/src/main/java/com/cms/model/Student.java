@@ -77,10 +77,10 @@ public class Student {
 		return parent_details;
 	}
 
-
 	public void setParent_details(String parent_details) {
 		this.parent_details = parent_details;
 	}
+
 	public Student(String susername, String spassword, String name, String contact_no, String stream, String batch,
 			String parent_details) {
 		super();

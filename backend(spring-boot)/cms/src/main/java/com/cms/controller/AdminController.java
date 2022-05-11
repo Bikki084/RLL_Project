@@ -63,11 +63,13 @@ public class AdminController {
 
 //	D delete student
 //	admin can delete the profile of student
-	@DeleteMapping("/students")
-	public void removeStudent(@RequestBody Student student) {
-		repo.removeStudentDetails(student);
+	@DeleteMapping("/students/{susername}")
+	public void removeStudent(@PathVariable("susername") String susername) {
+		repo.removeStudentDetails(susername);
 	}
 
+	
+	
 	@GetMapping(value = "/students", params = { "susername" })
 	public ResponseEntity<?> student(@RequestParam String susername) {
 		return ResponseEntity.ok(repo.getStudentById(susername));
@@ -78,12 +80,6 @@ public class AdminController {
 	@PutMapping("/students")
 	public ResponseEntity<?> update(@RequestBody Student student) {
 		Student old = repo.getStudentById(student.getSusername());
-//		old.setBatch(student.getBatch());
-//		old.setContact_no(student.getContact_no());
-//		old.setName(student.getName());
-//		old.setParent_details(student.getParent_details());
-//		old.setSpassword(student.getSpassword());
-//		old.setStream(student.getStream());
 
 		if (old != null) {
 			return ResponseEntity.ok(repo.addNewStudent(student));

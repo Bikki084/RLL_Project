@@ -25,7 +25,6 @@ import { ViewtimetableComponent } from './actions/student/viewtimetable/viewtime
 import { ViewassignmentComponent } from './actions/student/viewassignment/viewassignment.component';
 import { ViewattendanceComponent } from './actions/student/viewattendance/viewattendance.component';
 import { VieweventComponent } from './actions/student/viewevent/viewevent.component';
-import { StudentactionsComponent } from './actions/admin/studentactions/studentactions.component';
 import { AddbookComponent } from './actions/library/addbook/addbook.component';
 import { RequestbookComponent } from './actions/library/requestbook/requestbook.component';
 import { IssuebookComponent } from './actions/library/issuebook/issuebook.component';
@@ -37,9 +36,8 @@ import { FattendanceComponent } from './actions/faculty/fattendance/fattendance.
 import { FvieweventComponent } from './actions/faculty/fviewevent/fviewevent.component';
 import { LvieweventComponent } from './actions/library/lviewevent/lviewevent.component';
 import { ViewbooksComponent } from './actions/student/viewbooks/viewbooks.component';
-import { StudentheaderComponent } from './actions/admin/studentheader/studentheader.component';
-import { AddstudentComponent } from './actions/admin/addstudent/addstudent.component';
-import { UpdatestudentComponent } from './actions/admin/updatestudent/updatestudent.component';
+import { StudentactionsComponent } from './actions/admin/studentactions/studentactions.component';
+
 
 @NgModule({
   declarations: [
@@ -63,7 +61,6 @@ import { UpdatestudentComponent } from './actions/admin/updatestudent/updatestud
     ViewassignmentComponent,
     ViewattendanceComponent,
     VieweventComponent,
-    StudentactionsComponent,
     AddbookComponent,
     RequestbookComponent,
     IssuebookComponent,
@@ -75,9 +72,7 @@ import { UpdatestudentComponent } from './actions/admin/updatestudent/updatestud
     FvieweventComponent,
     LvieweventComponent,
     ViewbooksComponent,
-    StudentheaderComponent,
-    AddstudentComponent,
-    UpdatestudentComponent,
+    StudentactionsComponent,
   ],
   imports: [
     BrowserModule,

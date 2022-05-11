@@ -28,7 +28,7 @@ public class AdminLoginService {
 
 	@Autowired
 	FacultyRepo frepo;
-	
+
 	@Autowired
 	LibraryRepo lrepo;
 
@@ -48,8 +48,8 @@ public class AdminLoginService {
 	}
 
 // method for deleting the student entry
-	public void removeStudentDetails(Student student) {
-		srepo.deleteBySusername(student.getSusername());
+	public void removeStudentDetails(String susername) {
+		srepo.deleteBySusername(susername);
 	}
 
 //	method for updating the student details
@@ -83,37 +83,37 @@ public class AdminLoginService {
 	public Faculty getFacultyById(String fusername) {
 		return frepo.findById(fusername).get();
 	}
-	
+
 // method for saving the updated data
 	public Faculty updateFaculty(Faculty faculty) {
 		return frepo.save(faculty);
 	}
-	
+
 //	For Library Actions
 
 //	method for view from admin to library
 	public List<Library> getAllLibrary() {
 		return lrepo.findAll();
 	}
-	
+
 //	method for adding the faculty
 	public Library addNewLibrary(Library library) {
 		return lrepo.save(library);
 	}
-	
+
 //	method for deleting the library entry
 	public void removeLibraryDetails(Library library) {
 		lrepo.deleteByLusername(library.getLusername());
 	}
-	
+
 //	method for updating the student details
 	public Library getLibraryById(String lusername) {
 		return lrepo.findById(lusername).get();
 	}
-	
+
 // method for saving the updated data
 	public Library updateLibrary(Library library) {
 		return lrepo.save(library);
 	}
-	
+
 }
