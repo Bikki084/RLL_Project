@@ -45,8 +45,7 @@ public class AdminController {
 
 	}
 
-//	Mthods for Students
-
+//	Methods for Students
 //	R view list of all the students
 //	admin can view all the profile of students 
 	@GetMapping("/students")
@@ -68,8 +67,6 @@ public class AdminController {
 		repo.removeStudentDetails(susername);
 	}
 
-	
-	
 	@GetMapping(value = "/students", params = { "susername" })
 	public ResponseEntity<?> student(@RequestParam String susername) {
 		return ResponseEntity.ok(repo.getStudentById(susername));
@@ -90,22 +87,27 @@ public class AdminController {
 //	Methods for Faculties
 
 //	R get the list of all faculty
-	@GetMapping("/faculty-list")
+	@GetMapping("/faculty")
 	public List<Faculty> listFaculty() {
 		return repo.getAllFaculty();
 	}
 
 //	C add faculty
-	@PostMapping("/add-faculty")
+	@PostMapping("/faculty")
 	public Faculty addFaculty(@RequestBody Faculty faculty) {
 		return repo.addNewFaculty(faculty);
 	}
 
 //	D delete faculty
 //	admin can delete the profile of faculty
-	@DeleteMapping("/delete-faculty")
-	public void removeFaculty(@RequestBody Faculty faculty) {
-		repo.removeFacultyDetails(faculty);
+	@DeleteMapping("/faculty/{fusername}")
+	public void removeFaculty(@PathVariable("fusername") String fusername) {
+		repo.removeFacultyDetails(fusername);
+	}
+
+	@GetMapping(value = "/faculty", params = { "fusername" })
+	public ResponseEntity<?> faculty(@RequestParam String fusername) {
+		return ResponseEntity.ok(repo.getFacultyById(fusername));
 	}
 
 //	U update faculty
@@ -121,27 +123,32 @@ public class AdminController {
 
 //	Methods for Librarian
 //	R get the list of all librarian
-	@GetMapping("/library-list")
+	@GetMapping("/library")
 	public List<Library> listLibrary() {
 		return repo.getAllLibrary();
 	}
 
 //	C add librarian
-	@PostMapping("/add-library")
+	@PostMapping("/library")
 	public Library addLibrary(@RequestBody Library library) {
 		return repo.addNewLibrary(library);
 	}
 
-//	D delete library
-//	admin can delete the profile of librarian
-	@DeleteMapping("/delete-library")
-	public void removeLibrary(@RequestBody Library library) {
-		repo.removeLibraryDetails(library);
+//	D delete faculty
+//	admin can delete the profile of library
+	@DeleteMapping("/library/{lusername}")
+	public void removeLibrary(@PathVariable("lusername") String lusername) {
+		repo.removeLibraryDetails(lusername);
+	}
+
+	@GetMapping(value = "/library", params = { "lusername" })
+	public ResponseEntity<?> library(@RequestParam String lusername) {
+		return ResponseEntity.ok(repo.getLibraryById(lusername));
 	}
 
 //	U update librarian
 //	admin can update profile of librarian
-	@PutMapping("/update-library")
+	@PutMapping("/library")
 	public ResponseEntity<?> update(@RequestBody Library library) {
 		Library old = repo.getLibraryById(library.getLusername());
 		if (old != null) {

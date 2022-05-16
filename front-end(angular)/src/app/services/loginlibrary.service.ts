@@ -7,12 +7,17 @@ import { Library } from '../classes/library';
   providedIn: 'root'
 })
 export class LoginlibraryService {
+
+  sendLibrary(lusername: string) {
+    throw new Error('Method not implemented.');
+  }
+  
   private baseUrl = "http://localhost:8081/library/login";
 
-  
-  constructor(private httpClient:HttpClient) { }
-  libraryLogin(library:Library):Observable<object>  {
+
+  constructor(private httpClient: HttpClient) { }
+  libraryLogin(library: Library): Observable<Library> {
     console.log(library)
-    return this.httpClient.post(`${this.baseUrl}`, library);
+    return this.httpClient.post<Library>(`${this.baseUrl}`, library);
   }
 }

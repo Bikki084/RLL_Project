@@ -1,4 +1,5 @@
 export class Faculty {
-    fusername!: string;
-    fpassword!: string;
+  fusername!: string;
+  fpassword!: string;
+  map: any;
 }

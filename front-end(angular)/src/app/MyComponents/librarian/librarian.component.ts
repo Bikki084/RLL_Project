@@ -10,18 +10,23 @@ import { LoginlibraryService } from 'src/app/services/loginlibrary.service';
 })
 export class LibrarianComponent implements OnInit {
 
-  
+
   library: Library = new Library();
   constructor(private loginlibraryservice: LoginlibraryService, private router: Router) { }
 
   ngOnInit(): void {
   }
 
-  libraryLogin(){
+  libraryLogin() {
     console.log(this.library);
-    this.loginlibraryservice.libraryLogin(this.library).subscribe(data=>{
-      alert("Librarian LoggedIn Successfully"),  this.router.navigate(['/librarian-dashboard']); 
-    }, error=>alert("sorry please enter correct username and password!"))
-  }
+    this.loginlibraryservice.libraryLogin(this.library).subscribe(data => {
+      alert("Librarian LoggedIn Successfully");
+      if (data != null) {
+        // console.log(data);
+        let username = data.lusername;
+        this.router.navigate(['/librarian-dashboard', username]);
+      }
+    }, error => alert("sorry please enter correct username and password!"))
+  };
 
 }

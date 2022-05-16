@@ -11,9 +11,9 @@ export class LoginfacultyService {
 
 
   constructor(private httpClient:HttpClient) { }
-  facultyLogin(faculty:Faculty):Observable<object>  {
+  facultyLogin(faculty:Faculty):Observable<Faculty>  {
     console.log(faculty)
-    return this.httpClient.post(`${this.baseUrl}`, faculty);
+    return this.httpClient.post<Faculty>(`${this.baseUrl}`, faculty);
   }
 
 }

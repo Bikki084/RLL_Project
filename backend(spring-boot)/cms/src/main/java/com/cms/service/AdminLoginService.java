@@ -63,7 +63,6 @@ public class AdminLoginService {
 	}
 
 //	For Faculty Actions
-
 //	method for view from admin to faculty
 	public List<Faculty> getAllFaculty() {
 		return frepo.findAll();
@@ -75,11 +74,11 @@ public class AdminLoginService {
 	}
 
 //	method for deleting the faculty entry
-	public void removeFacultyDetails(Faculty faculty) {
-		frepo.deleteByFusername(faculty.getFusername());
+	public void removeFacultyDetails(String fusername) {
+		frepo.deleteByFusername(fusername);
 	}
 
-//	method for updating the student details
+//	method for updating the faculty details
 	public Faculty getFacultyById(String fusername) {
 		return frepo.findById(fusername).get();
 	}
@@ -102,8 +101,8 @@ public class AdminLoginService {
 	}
 
 //	method for deleting the library entry
-	public void removeLibraryDetails(Library library) {
-		lrepo.deleteByLusername(library.getLusername());
+	public void removeLibraryDetails(String lusername) {
+		lrepo.deleteByLusername(lusername);
 	}
 
 //	method for updating the student details

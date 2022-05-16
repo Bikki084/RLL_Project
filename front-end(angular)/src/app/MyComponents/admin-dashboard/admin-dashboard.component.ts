@@ -1,5 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { Component, Input, OnInit } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-admin-dashboard',
@@ -8,13 +8,15 @@ import { Router } from '@angular/router';
 })
 export class AdminDashboardComponent implements OnInit {
 
-  constructor(private router: Router) { }
+  @Input() ausername='';
+  constructor(private router: Router, private activatedrout: ActivatedRoute) { }
+  // ausername = "";
 
   ngOnInit(): void {
+  this.ausername = this.activatedrout.snapshot.paramMap.get('ausername') as string;
   }
 
   adminLogout(){
     this.router.navigate(['/admin']);
   }
-
 }

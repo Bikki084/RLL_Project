@@ -1,0 +1,8 @@
+package com.cms.model;
+
+
+@Entity
+@Table (name = "timetable")
+public class Timetable {
+
+}

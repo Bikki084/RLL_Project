@@ -1,5 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { Component, Input, OnInit } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-librarian-dashboard',
@@ -8,13 +8,15 @@ import { Router } from '@angular/router';
 })
 export class LibrarianDashboardComponent implements OnInit {
 
-  constructor(private router: Router) { }
-
+  @Input() lusername="";
+  constructor(private router: Router, private activatedrout: ActivatedRoute) { }
+  // lusername = "";
   ngOnInit(): void {
+    this.lusername = this.activatedrout.snapshot.paramMap.get('lusername') as string;
   }
 
   libraryLogout(){
-    this.router.navigate(['/librarian'])
+    this.router.navigate(['/librarian']);
   }
 
 }

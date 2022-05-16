@@ -11,17 +11,21 @@ import { LoginfacultyService } from 'src/app/services/loginfaculty.service';
 export class FacultyComponent implements OnInit {
 
 
-  faculty:Faculty = new Faculty();
+  faculty: Faculty = new Faculty();
   constructor(private loginfacultyservice: LoginfacultyService, private router: Router) { }
 
   ngOnInit(): void {
   }
 
-  facultyLogin(){
+  facultyLogin() {
     console.log(this.faculty);
-    this.loginfacultyservice.facultyLogin(this.faculty).subscribe(data=>{
-      alert("Faculty loggedIn successully"), this.router.navigate(['/faculty-dashboard'])
-    }, error=>alert("sorry please enter correct username and password!"));
-  }
+    this.loginfacultyservice.facultyLogin(this.faculty).subscribe(data => {
+      alert("Faculty loggedIn successully");
+      if(data!=null){
+        let username = data.fusername;
+        this.router.navigate(['/faculty-dashboard', username])
+      }
+    }, error => alert("sorry please enter correct username and password!"));
+  };
 
 }

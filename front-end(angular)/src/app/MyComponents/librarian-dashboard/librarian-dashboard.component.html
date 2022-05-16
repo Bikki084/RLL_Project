@@ -13,22 +13,38 @@
                         Actions
                     </a>
                     <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <li><a class="dropdown-item" routerLink="/library/addbook">Add Books</a></li>
-                        <li><hr class="dropdown-divider"></li>
-                        <li><a class="dropdown-item" routerLink="/library/requestbook">Request Books</a></li>
-                        <li><hr class="dropdown-divider"></li>
+                        <li><a class="dropdown-item" [routerLink]="['/library/addbook', lusername]">Add Books</a></li>
+                        <li>
+                            <hr class="dropdown-divider">
+                        </li>
+                        <li><a class="dropdown-item" [routerLink]="['/library/requestbook', lusername]">Request
+                                Books</a></li>
+                        <li>
+                            <hr class="dropdown-divider">
+                        </li>
                         <li><a class="dropdown-item" routerLink="/library/issuebook">Issue Books</a></li>
-                        <li><hr class="dropdown-divider"></li>
-                        <li><a class="dropdown-item" routerLink="/library/returnbook">Retuen Books</a></li>
-                        <li><hr class="dropdown-divider"></li>
+                        <li>
+                            <hr class="dropdown-divider">
+                        </li>
+                        <li><a class="dropdown-item" routerLink="/library/returnbook">Return Books</a></li>
+                        <li>
+                            <hr class="dropdown-divider">
+                        </li>
                         <li><a class="dropdown-item" routerLink="/library/viewevent">View Event</a></li>
-                        
+
                     </ul>
                 </li>
             </ul>
+            <div class="fs-6 mx-5 text-white">
+                welcome {{lusername}} !
+            </div>
             <form class="d-flex">
                 <button class="btn btn-outline-success" (click)="libraryLogout()" type="submit">Logout</button>
             </form>
         </div>
     </div>
 </nav>
+<!-- <div class="h-100 w-100" style="background: rgb(2,0,36);
+background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(9,121,97,1) 0%, rgba(0,212,255,1) 100%);">
+</div> -->
+<app-footer></app-footer>

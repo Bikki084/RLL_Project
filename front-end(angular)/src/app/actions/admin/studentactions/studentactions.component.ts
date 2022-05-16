@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { StudentService } from '../../services1/student.service';
 
 @Component({
@@ -21,11 +21,13 @@ export class StudentactionsComponent implements OnInit {
     parent_details: ""
   }
 
-  constructor(private studentservice: StudentService, private router: Router) {
+  constructor(private studentservice: StudentService, private router: Router, private activatedroute: ActivatedRoute) {
     this.getStudentDetails();
   }
 
+  ausername = "";
   ngOnInit(): void {
+    this.ausername = this.activatedroute.snapshot.paramMap.get('ausername') as string;
   }
 
   register(registerForm: NgForm) {
@@ -75,7 +77,7 @@ export class StudentactionsComponent implements OnInit {
         console.log(err);
       }
     );
-    
 
-    }
+
   }
+}

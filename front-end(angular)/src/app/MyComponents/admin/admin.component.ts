@@ -25,27 +25,14 @@ export class AdminComponent implements OnInit {
     console.log(this.admin);
     this.loginadminservice.adminLogin(this.admin).subscribe(data => {
       alert("Admin LoggedIn Succefully");
-      // console.log(JSON.stringify(data) + "test passed");
-      // Array.from(this.props.json).map(row => <RowRender key={id.row} row={row} />)
-
-      let myMap = new Map(Object.entries(JSON.stringify(data)));
-      const map = new Map(Object.entries(data));
-      console.log("this test")
-      // console.log(Object.fromEntries([...map]));
-      // for(let key of map.forEach())
-
-
-      console.log([...map.entries()]);  //to print the data in key values pair from api
-
-      map.forEach(function (Key, value) {
-        console.log(value + " = "+ Key);
-      });
-
+      
       if (data != null) {
         // console.log(data);
-        this.router.navigate(['/admin-dashboard']);
+        let username = data.ausername;
+        this.router.navigate(['/admin-dashboard', username]);
       }
     },
-      error => alert("sorry please enter correct username and password!"));
+      error => alert("sorry please enter correct username and password!"))
+    };
+
   }
-}

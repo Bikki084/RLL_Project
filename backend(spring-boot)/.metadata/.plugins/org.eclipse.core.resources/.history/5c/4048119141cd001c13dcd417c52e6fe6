@@ -1,8 +1,0 @@
-package com.cms.model;
-
-public class Library {
-
-	
-	private String lusername;
-	private String lpass
-}

@@ -37,6 +37,9 @@ import { FvieweventComponent } from './actions/faculty/fviewevent/fviewevent.com
 import { LvieweventComponent } from './actions/library/lviewevent/lviewevent.component';
 import { ViewbooksComponent } from './actions/student/viewbooks/viewbooks.component';
 import { StudentactionsComponent } from './actions/admin/studentactions/studentactions.component';
+import { FacultyactionsComponent } from './actions/admin/facultyactions/facultyactions.component';
+import { LibraryactionsComponent } from './actions/admin/libraryactions/libraryactions.component';
+import { AddeventComponent } from './actions/admin/addevent/addevent.component';
 
 
 @NgModule({
@@ -73,6 +76,9 @@ import { StudentactionsComponent } from './actions/admin/studentactions/studenta
     LvieweventComponent,
     ViewbooksComponent,
     StudentactionsComponent,
+    FacultyactionsComponent,
+    LibraryactionsComponent,
+    AddeventComponent,
   ],
   imports: [
     BrowserModule,

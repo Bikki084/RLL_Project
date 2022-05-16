@@ -13,8 +13,8 @@ export class LoginadminService {
   private baseUrl = "http://localhost:8081/admin/login";
   constructor(private httpClient: HttpClient) { }
 
-  adminLogin(admin: Admin):Observable<object>    {
-      console.log(admin)
-      return this.httpClient.post(`${this.baseUrl}`, admin);
+  adminLogin(admin: Admin): Observable<Admin> {
+    console.log(admin)
+    return this.httpClient.post<Admin>(`${this.baseUrl}`, admin);
   }
 }
