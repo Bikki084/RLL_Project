@@ -40,6 +40,10 @@ import { StudentactionsComponent } from './actions/admin/studentactions/studenta
 import { FacultyactionsComponent } from './actions/admin/facultyactions/facultyactions.component';
 import { LibraryactionsComponent } from './actions/admin/libraryactions/libraryactions.component';
 import { AddeventComponent } from './actions/admin/addevent/addevent.component';
+import { AddtimetableComponent } from './actions/admin/addtimetable/addtimetable.component';
+import { ViewbookComponent } from './actions/admin/viewbook/viewbook.component';
+
+
 
 
 @NgModule({
@@ -79,6 +83,9 @@ import { AddeventComponent } from './actions/admin/addevent/addevent.component';
     FacultyactionsComponent,
     LibraryactionsComponent,
     AddeventComponent,
+    AddtimetableComponent,
+    ViewbookComponent,
+
   ],
   imports: [
     BrowserModule,

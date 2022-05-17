@@ -1,143 +1,150 @@
-<app-admin-dashboard  [ausername]="ausername"></app-admin-dashboard>
-<div class="container w-50">
-    <div class="container">
-        <div class="mt-3 text-center">
-            <h2><i>Add New Student</i></h2>
-        </div>
-
-        <div class="card mt-3" style="padding: 20px;">
-            <form #registerForm="ngForm" (ngSubmit)="register(registerForm)">
-                <div class="form-group">
-                    <input type="text" #susername (ngModel)="susername" name="susername" id="susername"
-                        class="form-control" placeholder="Enter Username">
-                </div>
-                <div class="form-group my-3">
-                    <input type="text" #spassword (ngModel)="spassword" name="spassword" id="spassword"
-                        class="form-control" placeholder="Enter Password">
-                </div>
-                <div class="form-group my-3">
-                    <input type="text" #name (ngModel)="name" name="name" id="name" class="form-control"
-                        placeholder="Enter Name">
-                </div>
-                <div class="form-group my-3">
-                    <input type="text" #contact_no (ngModel)="contact_no" name="contact_no" id="contact_no"
-                        class="form-control" placeholder="Enter Contact Number">
-                </div>
-                <div class="form-group my-3">
-                    <input type="text" #stream (ngModel)="stream" name="stream" id="stream" class="form-control"
-                        placeholder="Enter Stream (e.g. BCA)">
-                </div>
-                <div class="form-group my-3">
-                    <input type="text" #batch (ngModel)="batch" name="batch" id="batch" class="form-control"
-                        placeholder="Enter Batch (e.g. 2018-2019)">
-                </div>
-                <div class="form-group my-3">
-                    <input type="text" #parent_details (ngModel)="parent_details" name="parent_details"
-                        id="parent_details" class="form-control" placeholder="Enter Parent Name (e.g. 2018-2019)">
-                </div>
-                <div class="form-group my-3">
-                    <input type="submit" value="Add Student" class="btn btn-primary w-100">
-                </div>
-            </form>
-        </div>
-    </div>
-</div>
-
-
-<div class="container">
-    <div class="mb-5">
-        <div class="card mt-5" style="align-items: center">
-            <h1><b><i><u>Student Details</u></i></b></h1>
-        </div>
-        <table class="table table-bordered">
-            <thead class="thead">
-                <tr>
-                    <th>Username</th>
-                    <th>Password</th>
-                    <th>Name</th>
-                    <th>Contact No</th>
-                    <th>Stream</th>
-                    <th>Batch</th>
-                    <th>Parent Names</th>
-                    <th>Update</th>
-                    <th>Delete</th>
-                </tr>
-            </thead>
-            <tbody class="tbody">
-                <tr *ngFor="let student of studenDetails">
-                    <td>{{student.susername}}</td>
-                    <td>{{student.spassword}}</td>
-                    <td>{{student.name}}</td>
-                    <td>{{student.contact_no}}</td>
-                    <td>{{student.stream}}</td>
-                    <td>{{student.batch}}</td>
-                    <td>{{student.parent_details}}</td>
-                    <td><button type="button" class="btn btn-primary" data-bs-toggle="modal"
-                            data-bs-target="#exampleModal" (click)="edit(student)">Edit</button></td>
-                    <td><button type="button" (click)="deleteStudent(student.susername)"
-                            class="btn btn-danger">Delete</button></td>
-                </tr>
-            </tbody>
-        </table>
-    </div>
-</div>
-
-
-
-
-<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-    aria-hidden="true">
-    <div class="modal-dialog" role="document">
-        <div class="modal-content">
-            <div class="modal-header my-3">
-                <h3 class="modal-title" id="exampleModalLabel">Update Student Details</h3>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+<div class="bg-image" style="
+    background-image: url('../../../../assets/wallpaper.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 1950px;
+    height: 1200px;
+    ">
+    <app-admin-dashboard [ausername]="ausername"></app-admin-dashboard>
+    <div class="container w-50">
+        <div class="container">
+            <div class="mt-3 text-center">
+                <h2><i>Add New Student</i></h2>
             </div>
-            <div class="modal-body my-3">
-                <form #updateForm="ngForm" (ngSubmit)="updateStudent()">
+
+  
+                <form #registerForm="ngForm" (ngSubmit)="register(registerForm)">
                     <div class="form-group">
-                        <label for="susername" class="form-label">Student Username</label>
-                        <input type="text" disabled #susername [(ngModel)]="studentToUpdate.susername" name="susername"
-                            id="susername" class="form-control" placeholder="Student Username">
+                        <input type="text" #susername (ngModel)="susername" name="susername" id="susername"
+                            class="form-control" placeholder="Enter Username">
                     </div>
                     <div class="form-group my-3">
-                        <label for="spassword" class="form-label">Password</label>
-                        <input type="text" #spassword [(ngModel)]="studentToUpdate.spassword" name="spassword"
-                            id="spassword" class="form-control" placeholder="Student Password">
+                        <input type="text" #spassword (ngModel)="spassword" name="spassword" id="spassword"
+                            class="form-control" placeholder="Enter Password">
                     </div>
                     <div class="form-group my-3">
-                        <label for="name" class="form-label">Name</label>
-                        <input type="text" #name [(ngModel)]="studentToUpdate.name" name="name" id="name"
-                            class="form-control" placeholder="Student Name">
+                        <input type="text" #name (ngModel)="name" name="name" id="name" class="form-control"
+                            placeholder="Enter Name">
                     </div>
                     <div class="form-group my-3">
-                        <label for="contact_no" class="form-label">Contact No</label>
-                        <input type="text" #contact_no [(ngModel)]="studentToUpdate.contact_no" name="contact_no"
-                            id="contact_no" class="form-control" placeholder="Student Contact No">
+                        <input type="text" #contact_no (ngModel)="contact_no" name="contact_no" id="contact_no"
+                            class="form-control" placeholder="Enter Contact Number">
                     </div>
                     <div class="form-group my-3">
-                        <label for="stream" class="form-label">Stream</label>
-                        <input type="text" #stream [(ngModel)]="studentToUpdate.stream" name="stream" id="stream"
-                            class="form-control" placeholder="Student Stream ">
+                        <input type="text" #stream (ngModel)="stream" name="stream" id="stream" class="form-control"
+                            placeholder="Enter Stream (e.g. BCA)">
                     </div>
                     <div class="form-group my-3">
-                        <label for="batch" class="form-label">Batch Year</label>
-                        <input type="text" #batch [(ngModel)]="studentToUpdate.batch" name="batch" id="batch"
-                            class="form-control" placeholder="Student Batch">
+                        <input type="text" #batch (ngModel)="batch" name="batch" id="batch" class="form-control"
+                            placeholder="Enter Batch (e.g. 2018-2019)">
                     </div>
                     <div class="form-group my-3">
-                        <label for="parent_details" class="form-label">Parent Name</label>
-                        <input type="text" #parent_details [(ngModel)]="studentToUpdate.parent_details"
-                            name="parent_details" id="parent_details" class="form-control"
-                            placeholder="Student Parent Name">
+                        <input type="text" #parent_details (ngModel)="parent_details" name="parent_details"
+                            id="parent_details" class="form-control" placeholder="Enter Parent Name">
                     </div>
-                    <div class="form-group">
-                        <input type="submit" value="Update" data-bs-dismiss="modal" class="btn btn-primary w-100">
+                    <div class="form-group my-3">
+                        <input type="submit" value="Add Student" class="btn btn-primary w-100">
                     </div>
                 </form>
+        
+        </div>
+    </div>
+
+
+    <div class="container  mb-5 h-95">
+        <div class="mb-5">
+           
+                <h1 class="mt-5 text-center"><i>Student Details</i></h1>
+   
+            <table class="table table-bordered">
+                <thead class="thead">
+                    <tr>
+                        <th>Username</th>
+                        <th>Password</th>
+                        <th>Name</th>
+                        <th>Contact No</th>
+                        <th>Stream</th>
+                        <th>Batch</th>
+                        <th>Parent Names</th>
+                        <th>Update</th>
+                        <th>Delete</th>
+                    </tr>
+                </thead>
+                <tbody class="tbody">
+                    <tr *ngFor="let student of studenDetails">
+                        <td>{{student.susername}}</td>
+                        <td>{{student.spassword}}</td>
+                        <td>{{student.name}}</td>
+                        <td>{{student.contact_no}}</td>
+                        <td>{{student.stream}}</td>
+                        <td>{{student.batch}}</td>
+                        <td>{{student.parent_details}}</td>
+                        <td><button type="button" class="btn btn-primary" data-bs-toggle="modal"
+                                data-bs-target="#exampleModal" (click)="edit(student)">Edit</button></td>
+                        <td><button type="button" (click)="deleteStudent(student.susername)"
+                                class="btn btn-danger">Delete</button></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+
+
+
+    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header my-3">
+                    <h3 class="modal-title" id="exampleModalLabel">Update Student Details</h3>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body my-3">
+                    <form #updateForm="ngForm" (ngSubmit)="updateStudent()">
+                        <div class="form-group">
+                            <label for="susername" class="form-label">Student Username</label>
+                            <input type="text" disabled #susername [(ngModel)]="studentToUpdate.susername"
+                                name="susername" id="susername" class="form-control" placeholder="Student Username">
+                        </div>
+                        <div class="form-group my-3">
+                            <label for="spassword" class="form-label">Password</label>
+                            <input type="text" #spassword [(ngModel)]="studentToUpdate.spassword" name="spassword"
+                                id="spassword" class="form-control" placeholder="Student Password">
+                        </div>
+                        <div class="form-group my-3">
+                            <label for="name" class="form-label">Name</label>
+                            <input type="text" #name [(ngModel)]="studentToUpdate.name" name="name" id="name"
+                                class="form-control" placeholder="Student Name">
+                        </div>
+                        <div class="form-group my-3">
+                            <label for="contact_no" class="form-label">Contact No</label>
+                            <input type="text" #contact_no [(ngModel)]="studentToUpdate.contact_no" name="contact_no"
+                                id="contact_no" class="form-control" placeholder="Student Contact No">
+                        </div>
+                        <div class="form-group my-3">
+                            <label for="stream" class="form-label">Stream</label>
+                            <input type="text" #stream [(ngModel)]="studentToUpdate.stream" name="stream" id="stream"
+                                class="form-control" placeholder="Student Stream ">
+                        </div>
+                        <div class="form-group my-3">
+                            <label for="batch" class="form-label">Batch Year</label>
+                            <input type="text" #batch [(ngModel)]="studentToUpdate.batch" name="batch" id="batch"
+                                class="form-control" placeholder="Student Batch">
+                        </div>
+                        <div class="form-group my-3">
+                            <label for="parent_details" class="form-label">Parent Name</label>
+                            <input type="text" #parent_details [(ngModel)]="studentToUpdate.parent_details"
+                                name="parent_details" id="parent_details" class="form-control"
+                                placeholder="Student Parent Name">
+                        </div>
+                        <div class="form-group">
+                            <input type="submit" value="Update" data-bs-dismiss="modal" class="btn btn-primary w-100">
+                        </div>
+                    </form>
+                </div>
             </div>
         </div>
     </div>
-</div>
 
-<app-footer></app-footer>
+</div>

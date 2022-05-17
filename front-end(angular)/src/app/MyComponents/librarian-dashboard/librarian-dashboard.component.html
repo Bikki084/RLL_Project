@@ -22,15 +22,18 @@
                         <li>
                             <hr class="dropdown-divider">
                         </li>
-                        <li><a class="dropdown-item" routerLink="/library/issuebook">Issue Books</a></li>
+                        <li><a class="dropdown-item" [routerLink]="['/library/issuebook', lusername]">Issue Books</a>
+                        </li>
                         <li>
                             <hr class="dropdown-divider">
                         </li>
-                        <li><a class="dropdown-item" routerLink="/library/returnbook">Return Books</a></li>
+                        <li><a class="dropdown-item" [routerLink]="['/library/returnbook', lusername]">Return Books</a>
+                        </li>
                         <li>
                             <hr class="dropdown-divider">
                         </li>
-                        <li><a class="dropdown-item" routerLink="/library/viewevent">View Event</a></li>
+                        <li><a class="dropdown-item" [routerLink]="['/library/viewevent', lusername]">View Event</a>
+                        </li>
 
                     </ul>
                 </li>
@@ -47,4 +50,8 @@
 <!-- <div class="h-100 w-100" style="background: rgb(2,0,36);
 background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(9,121,97,1) 0%, rgba(0,212,255,1) 100%);">
 </div> -->
+<div class="container">
+    <h1 class="text-center my-2">Welcome To Librarian Dashboard</h1>
+</div>
+
 <app-footer></app-footer>

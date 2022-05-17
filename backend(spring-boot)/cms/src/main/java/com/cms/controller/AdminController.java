@@ -19,9 +19,11 @@ import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.client.HttpServerErrorException.InternalServerError;
 
 import com.cms.model.Admin;
+import com.cms.model.Book;
 import com.cms.model.Faculty;
 import com.cms.model.Library;
 import com.cms.model.Student;
+import com.cms.model.Timetable;
 import com.cms.service.AdminLoginService;
 import com.cms.service.StudentLoginService;
 
@@ -155,6 +157,30 @@ public class AdminController {
 			return ResponseEntity.ok(repo.updateLibrary(library));
 		}
 		return (ResponseEntity<?>) ResponseEntity.internalServerError();
+	}
+	
+//	R admin can view timetable
+	@GetMapping("/timetable")
+	public List<Timetable> listTimetable() {
+		return repo.getAllTimetable();
+	}
+	
+//	C admin can add timetable
+	@PostMapping("/timetable")
+	public Timetable addTimetable(@RequestBody Timetable timetable) {
+		return repo.addNewTimetable(timetable);
+	}
+	
+//	D admin can delete timetable
+	@DeleteMapping("/timetable/{timetableId}")
+	public void removeTimetable(@PathVariable("timetableId") Integer timetableId) {
+		repo.removeTimetableDetails(timetableId);
+	}
+	
+//	R admin can view all the list of books
+	@GetMapping("/get/books")
+	public List<Book> listBooks() {
+		return repo.getAllBook();
 	}
 
 }

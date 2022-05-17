@@ -8,7 +8,7 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                 <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                    <a class="nav-link dropdown-toggle"  id="navbarDropdown" role="button"
                         data-bs-toggle="dropdown" aria-expanded="false">
                         Actions
                     </a>
@@ -17,27 +17,27 @@
                         <li>
                             <hr class="dropdown-divider">
                         </li>
-                        <li><a class="dropdown-item" routerLink="/student/viewbooks">View Books</a></li>
+                        <li><a class="dropdown-item" [routerLink]="['/student/viewbooks', susername]">View Books</a></li>
                         <li>
                             <hr class="dropdown-divider">
                         </li>
-                        <li><a class="dropdown-item" routerLink="/student/viewtimetable">View Timetable</a></li>
+                        <li><a class="dropdown-item" [routerLink]="['/student/viewtimetable', susername]">View Timetable</a></li>
                         <li>
                             <hr class="dropdown-divider">
                         </li>
-                        <li><a class="dropdown-item" routerLink="/student/viewassignment">View Assignment</a></li>
+                        <li><a class="dropdown-item" [routerLink]="['/student/viewassignment', susername]">View Assignment</a></li>
                         <li>
                             <hr class="dropdown-divider">
                         </li>
-                        <li><a class="dropdown-item" routerLink="/student/viewresult">View Result</a></li>
+                        <li><a class="dropdown-item" [routerLink]="['/student/viewresult', susername]">View Result</a></li>
                         <li>
                             <hr class="dropdown-divider">
                         </li>
-                        <li><a class="dropdown-item" routerLink="/student/viewattendance">View Attendance</a></li>
+                        <li><a class="dropdown-item" [routerLink]="['/student/viewattendance', susername]">View Attendance</a></li>
                         <li>
                             <hr class="dropdown-divider">
                         </li>
-                        <li><a class="dropdown-item" routerLink="/student/viewevents">View Event</a></li>
+                        <li><a class="dropdown-item" [routerLink]="['/student/viewevents', susername]">View Event</a></li>
 
                     </ul>
                 </li>
@@ -51,3 +51,7 @@
         </div>
     </div>
 </nav>
+<div class="container">
+    <h1 class="text-center my-2">Welcome To Student Dashboard</h1>
+</div>
+<app-footer></app-footer>

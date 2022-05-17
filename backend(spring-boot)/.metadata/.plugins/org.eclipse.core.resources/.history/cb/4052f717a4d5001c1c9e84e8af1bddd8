@@ -1,0 +1,8 @@
+package com.cms;
+
+import org.testng.annotations.Test;
+
+public class FacultyTest {
+	@DisplayName("FacultyController")
+	
+}

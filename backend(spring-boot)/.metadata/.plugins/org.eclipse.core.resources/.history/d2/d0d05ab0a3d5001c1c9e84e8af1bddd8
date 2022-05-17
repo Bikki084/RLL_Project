@@ -1,0 +1,10 @@
+package com.cms;
+
+import org.testng.annotations.Test;
+
+@DisplayName("AdminController")
+public class AdminTest {
+  @Test
+  public void f() {
+  }
+}

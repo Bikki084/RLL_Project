@@ -1,0 +1,78 @@
+<!-- Background image -->
+<div class="bg-image" style="
+    background-image: url('https://www.incimages.com/uploaded_files/image/1920x1080/getty_480415606_20001125165376731585_129801.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 1550px;
+    height: 100vh;
+    ">
+
+    <app-admin-dashboard [ausername]="ausername"></app-admin-dashboard>
+    <!-- Button trigger modal -->
+
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h3 class="modal-title" id="exampleModalLabel">Add New TimeTable</h3>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="mt-2" style="padding: 20px;">
+                        <form #registerForm="ngForm" (ngSubmit)="register(registerForm)">
+                            <div class="form-group">
+                                <input type="text" #stream (ngModel)="stream" name="stream" id="stream"
+                                    class="form-control" placeholder="Enter Stream (e.g. CSE)">
+                            </div>
+                            <div class="form-group my-3">
+                                <input type="text" #batch (ngModel)="batch" name="batch"
+                                    id="batch" class="form-control" placeholder="Enter Batch (e.g. 2017-2021)">
+                            </div>
+                            <div class="form-group my-3">
+                                <input type="text" #name (ngModel)="name" name="name"
+                                    id="name" class="form-control" placeholder="Enter Name (e.g. 17th May Exam)">
+                            </div>
+                            <div class="modal-footer">
+                                <button type="submit" class="btn btn-primary">Add</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="container my-5 h-60">
+
+
+        <h2 class="text-center"><i>Timetable Details</i></h2>
+
+        <table class="table table-striped">
+            <thead class="thead" style="font-size:large">
+                <tr>
+                    <th scope="col">TimeTable Id</th>
+                    <th scope="col">Stream</th>
+                    <th scope="col">Batch</th>
+                    <th scope="col">Name</th>
+                </tr>
+            </thead>
+            <tbody class="tbody" style="font-size:medium">
+                <tr *ngFor="let timetable of timetableDetails">
+                    <td>{{timetable.timetableId}}</td>
+                    <td>{{timetable.stream}}</td>
+                    <td>{{timetable.batch}}</td>
+                    <td>{{timetable.name}}</td>
+                    <td><button type="button" (click)="deleteTimetable(timetable.timetableId)" class="btn btn-danger">Delete</button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <div class="container my-3 d-flex justify-content-center">
+            <button class="btn btn-primary my-3" data-bs-toggle="modal" data-bs-target="#exampleModal">Add New
+                TimeTable</button>
+        </div>
+    </div>
+    <app-footer></app-footer>
+</div>

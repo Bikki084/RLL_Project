@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
@@ -8,9 +8,11 @@ import { ActivatedRoute, Router } from '@angular/router';
 })
 export class FacultyDashboardComponent implements OnInit {
 
+
+  @Input() fusername='';
   constructor(private router: Router, private activatedrout: ActivatedRoute) { }
 
-  fusername="";
+  
 
   ngOnInit(): void {
     this.fusername = this.activatedrout.snapshot.paramMap.get('fusername') as string;

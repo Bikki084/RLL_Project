@@ -1,14 +1,13 @@
 <!-- Background image -->
-<!-- <div class="bg-image" style="
-    background-image: url('https://www.incimages.com/uploaded_files/image/1920x1080/getty_480415606_20001125165376731585_129801.jpg');
+<div class="bg-image" style="
+    background-image: url('../../../../assets/wallpaper3.jpg');
     background-position: center;
     background-repeat: no-repeat;
-    background-size: 1520px;
-    height: 95vh;
-    
-    "> -->
+    background-size: 1550px;
+    height: 100vh;
+    ">
 
-<app-librarian-dashboard [lusername]="lusername"></app-librarian-dashboard>
+    <app-librarian-dashboard [lusername]="lusername"></app-librarian-dashboard>
     <!-- Button trigger modal -->
 
     <!-- Modal -->
@@ -45,35 +44,35 @@
     </div>
 
 
-    <div class="container my-5 h-100">
-      
-           
-                <h2 class="text-center"><i>Book Details</i></h2>
-       
-            <table class="table table-bordered">
-                <thead class="thead">
-                    <tr>
-                        <th>Book Id</th>
-                        <th>Book Name</th>
-                        <th>Book Author</th>
-                        <th>Book Price</th>
-                    </tr>
-                </thead>
-                <tbody class="tbody">
-                    <tr *ngFor="let book of bookDetails">
-                        <td>{{book.book_id}}</td>
-                        <td>{{book.book_name}}</td>
-                        <td>{{book.book_author}}</td>
-                        <td>{{book.book_price}}</td>
-                        <td><button type="button" (click)="deleteBook(book.book_id)"
-                                class="btn btn-danger">Delete</button></td>
-                    </tr>
-                </tbody>
-            </table>
-            <div class="container my-3 d-flex justify-content-center">
-               <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">Add New
-                   Book</button>
-            </div>
-    </div>
-<!-- </div> -->
+    <div class="container my-5 h-60">
 
+
+        <h2 class="text-center"><i>Book Details</i></h2>
+
+        <table class="table table-striped">
+            <thead class="thead" style="font-size:large">
+                <tr>
+                    <th scope="col">Book Id</th>
+                    <th scope="col">Book Name</th>
+                    <th scope="col">Book Author</th>
+                    <th scope="col">Book Price</th>
+                </tr>
+            </thead>
+            <tbody class="tbody" style="font-size:medium">
+                <tr *ngFor="let book of bookDetails">
+                    <td>{{book.book_id}}</td>
+                    <td>{{book.book_name}}</td>
+                    <td>{{book.book_author}}</td>
+                    <td>{{book.book_price}}</td>
+                    <td><button type="button" (click)="deleteBook(book.book_id)" class="btn btn-danger">Delete</button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <div class="container my-3 d-flex justify-content-center">
+            <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">Add New
+                Book</button>
+        </div>
+    </div>
+    <app-footer></app-footer>
+</div>

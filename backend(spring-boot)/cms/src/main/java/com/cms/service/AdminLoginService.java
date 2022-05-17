@@ -8,13 +8,17 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.cms.model.Admin;
+import com.cms.model.Book;
 import com.cms.model.Faculty;
 import com.cms.model.Library;
 import com.cms.model.Student;
+import com.cms.model.Timetable;
 import com.cms.repo.AdminRepo;
+import com.cms.repo.BookRepo;
 import com.cms.repo.FacultyRepo;
 import com.cms.repo.LibraryRepo;
 import com.cms.repo.StudentRepo;
+import com.cms.repo.TimetableRepo;
 
 @Service
 @Transactional
@@ -31,6 +35,13 @@ public class AdminLoginService {
 
 	@Autowired
 	LibraryRepo lrepo;
+	
+	@Autowired 
+	TimetableRepo trepo;
+	
+	@Autowired
+	BookRepo bookRepo;
+	
 
 	public Admin getAdminByAdmin(String username) {
 		return adminRepo.findByAusername(username);
@@ -114,5 +125,24 @@ public class AdminLoginService {
 	public Library updateLibrary(Library library) {
 		return lrepo.save(library);
 	}
+	
+//	method for viewing the timetable
+	public List<Timetable> getAllTimetable(){
+		return trepo.findAll();
+	}
 
+//	method for adding timetable
+	public Timetable addNewTimetable(Timetable timetable) {
+		return trepo.save(timetable);
+	}
+	
+//	mthod for deleting the timetable
+	public void removeTimetableDetails(Integer timetableId) {
+		trepo.deleteById(timetableId);
+	}
+	
+//	method for view all the books available
+	public List<Book> getAllBook(){
+		return bookRepo.findAll();
+	}
 }

@@ -45,7 +45,5 @@ public class Faculty {
 		super();
 		// TODO Auto-generated constructor stub
 	}
-	
-	
 
 }

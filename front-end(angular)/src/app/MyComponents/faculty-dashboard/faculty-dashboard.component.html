@@ -13,7 +13,7 @@
                         Actions
                     </a>
                     <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <li><a class="dropdown-item" routerLink="/faculty/ftimetable">Timetable</a></li>
+                        <li><a class="dropdown-item" [routerLink]="['/faculty/ftimetable', fusername]">Timetable</a></li>
                         <li>
                             <hr class="dropdown-divider">
                         </li>
@@ -38,3 +38,7 @@
         </div>
     </div>
 </nav>
+<div class="container">
+    <h1 class="text-center my-2">Welcome To Faculty Dashboard</h1>
+</div>
+<app-footer></app-footer>

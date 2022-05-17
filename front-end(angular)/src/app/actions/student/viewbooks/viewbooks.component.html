@@ -8,45 +8,26 @@ height: 100vh;
 
 ">
 
-<app-student-dashboard></app-student-dashboard>
+<app-student-dashboard [name]="susername"></app-student-dashboard>
 
     <div class="container my-5">
-        <h1 class="text-center my-5" style="color: white;"><b><u><i>View Books</i></u></b></h1>
-        <table class="table table-striped" style="color: white;">
-            <thead style="color: white; font-size:large">
+        <h1 class="text-center my-5" style="color: white;"><i>Available Books</i></h1>
+        <table class="table table-bordered" style="color: white;">
+            <thead style="font-size:large">
               <tr>
-                <th scope="col">ID</th>
+                <th scope="col">Book Id</th>
                 <th scope="col">Book Name</th>
                 <th scope="col">Author</th>
-                <th scope="col">Price</th>
               </tr>
             </thead>
-            <tbody style="color: white; font-size:medium">
-              <tr>
-                <th scope="row" style="color: white; font-size:medium">1</th>
-                <td style="color: white; font-size:medium">Php Coding</td>
-                <td style="color: white; font-size:medium">Maurya</td>
-                <td style="color: white; font-size:medium">2499</td>
+            <tbody class="tbody" style="font-size:medium">
+              <tr *ngFor="let book of bookDetails">
+                  <td>{{book.book_id}}</td>
+                  <td>{{book.book_name}}</td>
+                  <td>{{book.book_author}}</td>
               </tr>
-              <tr>
-                <th  scope="row" style="color: white; font-size:medium">2</th>
-                <td style="color: white; font-size:medium">Computer Graphics</td>
-                <td style="color: white; font-size:medium">Hamilton</td>
-                <td style="color: white; font-size:medium">3455</td>
-              </tr>
-              <tr>
-                <th scope="row" style="color: white; font-size:medium">3</th>
-                <td style="color: white; font-size:medium">Networks</td>
-                <td style="color: white; font-size:medium">Chandra</td>
-                <td style="color: white; font-size:medium">7999</td>
-              </tr>
-              <tr>
-                <th scope="row" style="color: white; font-size:medium">4</th>
-                <td style="color: white; font-size:medium">Hacking</td>
-                <td style="color: white; font-size:medium">Syam</td>
-                <td style="color: white; font-size:medium">2999</td>
-              </tr>
-            </tbody>
+          </tbody>
           </table>
         </div>
     </div>
+    <app-footer></app-footer>

@@ -25,11 +25,11 @@
                         <li>
                             <hr class="dropdown-divider">
                         </li>
-                        <li><a class="dropdown-item" >Add Timetable</a></li>
+                        <li><a class="dropdown-item" [routerLink]="['/admin/addtimetable', ausername]">Add Timetable</a></li>
                         <li>
                             <hr class="dropdown-divider">
                         </li>
-                        <li><a class="dropdown-item" routerLink="/admin/addevent">Add Event</a></li>
+                        <li><a class="dropdown-item" [routerLink]="['/admin/addevent', ausername]">Add Event</a></li>
                         <li>
                             <hr class="dropdown-divider">
                         </li>
@@ -37,7 +37,7 @@
                         <li>
                             <hr class="dropdown-divider">
                         </li>
-                        <li><a class="dropdown-item" href="#">View Available Books</a></li>
+                        <li><a class="dropdown-item" [routerLink]="['/admin/viewbook', ausername]">View Available Books</a></li>
 
                     </ul>
                 </li>
@@ -51,4 +51,8 @@
         </div>
     </div>
 </nav>
+<div class="container">
+    <h1 class="text-center my-2">Welcome To Admin Dashboard</h1>
+</div>
+<app-footer></app-footer>
 

@@ -1,0 +1,33 @@
+
+<div class="bg-image" style="
+background: #222 url('../../../../assets/wallpaper7.jpg') center center no-repeat;
+background-position: center;
+background-repeat: no-repeat;
+background-size: 1520px;
+height: 100vh;
+
+">
+
+<app-admin-dashboard [ausername]="ausername"></app-admin-dashboard>
+
+    <div class="container my-5">
+        <h1 class="text-center my-5" style="color: white;"><i>Available Books</i></h1>
+        <table class="table table-bordered" style="color: white;">
+            <thead style="font-size:large">
+              <tr>
+                <th scope="col">Book Id</th>
+                <th scope="col">Book Name</th>
+                <th scope="col">Author</th>
+              </tr>
+            </thead>
+            <tbody class="tbody" style="font-size:medium">
+              <tr *ngFor="let book of bookDetails">
+                  <td>{{book.book_id}}</td>
+                  <td>{{book.book_name}}</td>
+                  <td>{{book.book_author}}</td>
+              </tr>
+          </tbody>
+          </table>
+        </div>
+    </div>
+    <app-footer></app-footer>

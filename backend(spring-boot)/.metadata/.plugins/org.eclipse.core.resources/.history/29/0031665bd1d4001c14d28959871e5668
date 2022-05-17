@@ -1,0 +1,9 @@
+package com.cms.repo;
+
+import java.util.Optional;
+
+import com.cms.model.Events;
+
+public interface ImageRepo extends JpaRepository<Events, Long> {
+	Optional<Events> findByName(String name);
+}

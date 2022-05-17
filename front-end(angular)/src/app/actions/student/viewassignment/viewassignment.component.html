@@ -1,11 +1,10 @@
-<app-student-dashboard></app-student-dashboard>
-
 <!-- Background image -->
 <div class="bg-image" style="
-    background-image: url(https://media.wired.com/photos/61f1d9c114ec8fbe076335c4/3:2/w_1280%2Cc_limit/Business_Book%2520&%2520Laser-665047728.jpg);
+    background-image: url('../../../../assets/wallpaper5.jpg');
     height: 100vh;
-  ">
+    ">
 
+    <app-student-dashboard [name]="susername"></app-student-dashboard>
 
     <div class="container-fluid">
         <div class="row">
@@ -15,7 +14,7 @@
 
                     <form action="">
 
-                        <h1 class="fs-2 my-5" style="letter-spacing: 1px; color: white;"><b><u><i>View Assignment</i></u></b></h1>
+                        <h1 class="my-5" style="letter-spacing: 1px;"><i>View Assignment</i></h1>
 
                         <select class="form-select my-5" aria-label="Default select example">
                             <option selected>Select the course</option>

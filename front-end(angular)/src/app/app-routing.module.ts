@@ -32,6 +32,9 @@ import { StudentactionsComponent } from './actions/admin/studentactions/studenta
 import { FacultyactionsComponent } from './actions/admin/facultyactions/facultyactions.component';
 import { LibraryactionsComponent } from './actions/admin/libraryactions/libraryactions.component';
 import { AddeventComponent } from './actions/admin/addevent/addevent.component';
+import { AddtimetableComponent } from './actions/admin/addtimetable/addtimetable.component';
+import { ViewbookComponent } from './actions/admin/viewbook/viewbook.component';
+
 
 
 const routes: Routes = [
@@ -46,26 +49,29 @@ const routes: Routes = [
   { path: 'faculty-dashboard/:fusername', component: FacultyDashboardComponent},
   { path: 'librarian-dashboard/:lusername', component: LibrarianDashboardComponent},
   { path: 'student/myprofile/:susername', component: MyprofileComponent },
-  { path: 'student/viewbooks', component: ViewbooksComponent},
-  { path: 'student/viewresult', component:ViewresultComponent},
-  { path: 'student/viewassignment', component:ViewassignmentComponent},
-  { path: 'student/viewattendance', component:ViewattendanceComponent},
-  { path: 'student/viewtimetable', component:ViewtimetableComponent},
-  { path: 'student/viewevents', component: VieweventComponent},
+  { path: 'student/viewbooks/:susername', component: ViewbooksComponent},
+  { path: 'student/viewresult/:susername', component:ViewresultComponent},
+  { path: 'student/viewassignment/:susername', component:ViewassignmentComponent},
+  { path: 'student/viewattendance/:susername', component:ViewattendanceComponent},
+  { path: 'student/viewtimetable/:susername', component:ViewtimetableComponent},
+  { path: 'student/viewevents/:susername', component: VieweventComponent},
   { path: 'library/addbook/:lusername', component: AddbookComponent},
   { path: 'library/requestbook/:lusername', component: RequestbookComponent},
-  { path: 'library/issuebook', component: IssuebookComponent},
-  { path: 'library/returnbook', component: ReturnbookComponent},
-  { path: 'library/viewevent', component: LvieweventComponent},
+  { path: 'library/issuebook/:lusername', component: IssuebookComponent},
+  { path: 'library/returnbook/:lusername', component: ReturnbookComponent},
+  { path: 'library/viewevent/:lusername', component: LvieweventComponent},
   { path: 'faculty/fassignments', component: FassignmentComponent},
   { path: 'faculty/fattendance', component: FattendanceComponent},
   { path: 'faculty/fresults', component: FresultsComponent},
-  { path: 'faculty/ftimetable', component: FtimetableComponent},
+  { path: 'faculty/ftimetable/:fusername', component: FtimetableComponent},
   { path: 'faculty/fviewevent', component: FvieweventComponent},
   { path: 'admin/studentactions/:ausername', component: StudentactionsComponent},
   { path: 'admin/facultyactions/:ausername',component: FacultyactionsComponent},
   { path: 'admin/libraryactions/:ausername', component: LibraryactionsComponent},
-  { path: 'admin/addevent', component: AddeventComponent}
+  { path: 'admin/addevent/:ausername', component: AddeventComponent},
+  { path: 'admin/addtimetable/:ausername', component: AddtimetableComponent},
+  { path: 'admin/viewbook/:ausername', component: ViewbookComponent}
+
 
 ];
 

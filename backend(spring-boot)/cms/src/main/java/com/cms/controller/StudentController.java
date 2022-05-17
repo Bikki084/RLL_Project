@@ -38,4 +38,9 @@ public class StudentController {
 		return ResponseEntity.ok(repo.getStudentByStudent(susername));
 	}
 
+	@GetMapping("/get/tt/{stream}")
+	public ResponseEntity<?> getTimetableByStream(@PathVariable("stream") String stream) {
+		return ResponseEntity.ok(repo.getTimetableByStudent(stream));
+	}
+
 }

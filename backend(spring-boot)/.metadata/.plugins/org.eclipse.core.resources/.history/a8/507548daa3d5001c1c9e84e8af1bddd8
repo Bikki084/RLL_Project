@@ -1,0 +1,10 @@
+package com.cms;
+
+import org.junit.jupiter.api.DisplayName;
+import org.testng.annotations.Test;
+
+@DisplayName("AdminController")
+public class AdminTest {
+
+	
+}

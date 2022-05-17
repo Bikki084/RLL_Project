@@ -1,0 +1,10 @@
+package com.cms;
+
+import org.testng.annotations.Test;
+
+
+public class StudentTest {
+  @Test
+  public void f() {
+  }
+}

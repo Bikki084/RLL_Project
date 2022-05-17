@@ -1,14 +1,14 @@
-<app-student-dashboard></app-student-dashboard>
 
 <!-- Background image -->
 <div class="bg-image" style="
-    background-image: url('https://www.pixelstalk.net/wp-content/uploads/2016/10/College-Backgrounds.jpg');
+    background-image: url('../../../../assets/wallpaper3.jpg');
     background-position: center;
     background-repeat: no-repeat;
     background-size: 1520px;
     height: 100vh;
-  ">
+    ">
 
+<app-student-dashboard [name]="susername"></app-student-dashboard>
 
     <div class="container-fluid">
         <div class="row">
@@ -18,7 +18,7 @@
 
                     <form action="">
 
-                        <h1 class="fs-2 my-5" style="letter-spacing: 1px; color: black;"><b><u><i>View Results</i></u></b></h1>
+                        <h1 class="my-5" style="letter-spacing: 1px; color: black;"><i>View Results</i></h1>
 
                         <select class="form-select my-5" aria-label="Default select example">
                             <option selected>Select the course</option>

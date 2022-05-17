@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-viewresult',
@@ -7,9 +8,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ViewresultComponent implements OnInit {
 
-  constructor() { }
-
+  constructor(private activatedroute: ActivatedRoute) { }
+  susername="";
   ngOnInit(): void {
+    this.susername = this.activatedroute.snapshot.paramMap.get('susername') as string;
   }
 
 }

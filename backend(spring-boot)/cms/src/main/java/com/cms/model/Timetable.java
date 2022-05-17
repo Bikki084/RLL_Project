@@ -13,9 +13,9 @@ public class Timetable {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int timetableId;
-	private String department;
 	private String stream;
 	private String batch;
+	private String name;
 
 	public int getTimetableId() {
 		return timetableId;
@@ -23,14 +23,6 @@ public class Timetable {
 
 	public void setTimetableId(int timetableId) {
 		this.timetableId = timetableId;
-	}
-
-	public String getDepartment() {
-		return department;
-	}
-
-	public void setDepartment(String department) {
-		this.department = department;
 	}
 
 	public String getStream() {
@@ -41,6 +33,14 @@ public class Timetable {
 		this.stream = stream;
 	}
 
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
 	public String getBatch() {
 		return batch;
 	}
@@ -49,11 +49,11 @@ public class Timetable {
 		this.batch = batch;
 	}
 
-	public Timetable(String department, String stream, String batch) {
+	public Timetable(String stream, String batch, String name) {
 		super();
-		this.department = department;
 		this.stream = stream;
 		this.batch = batch;
+		this.name = name;
 	}
 
 	public Timetable() {
